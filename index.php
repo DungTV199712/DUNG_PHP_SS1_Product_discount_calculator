@@ -1,43 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!DOCTYPE HTML>
+<html>
 <style type="text/css">
     .login {
-        height: 300px; width: 300px;
-        margin: 2px 40%;
-        padding: 10px;
-        border: 1px #CCC solid;
+        height:200px; width:400px;
+        margin:1px 42%;
+        padding:5px;
+        border:1px mediumblue solid;
     }
-    .login input
-    {
-        padding: 5px; margin: 5px;
+    .login input {
+        padding:5px; margin:1px
     }
-
+    h2 {
+        color: darkblue;
+    }
 </style>
 <body>
-<?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $product = $_POST['PD'];
-    $price = $_POST['LP'];
-$discount = $_POST['DP'];
-    if ($username === "admin" && $password === "admin") {
-//        echo "<h2>Welcome <span style='color:red'>" .$username. "</span> to website</h2>";
- }
-//    else{
-//        echo "<h2><span style='color:red'>Login Error</span></h2>";
-//    }
-}
-?>
-<form method="post">
+
+<form action="Product.php" method="post">
     <div class="login">
-        <h2>Product Discount Product</h2>
-        Product Description:<input type="text" name = 'PD' size = '30' placeholder="product description" /></br>
-        List Price:<input type="text" name = 'LP' size = '30' placeholder="list price" /> </br>
-        Discount Percent:<input type="text" name = 'DP' size = '30' placeholder="discount percent" />
-        <input type="submit" value="Calculate Discount " />
+        <h2>Product Discount Calculator</h2>
+        <label>Product Description: </label>
+        <input type="text"  size="30" name="PD" placeholder=" " /><br/>
+        <label>List Price: </label>
+        <input type="text" size="30" name="List" placeholder=" " /><br/>
+        <label>Discount Percent: </label>
+        <input type="text" size="30" name="Discount" placeholder=" " />
+        <label>&nbsp;</label>
+        <input type="submit" name="submit" value="Calculator Discount"/>
     </div>
-
 </form>
-
 </body>
 </html>
